@@ -4,6 +4,8 @@
 
 A full stack React application to view and book hotels built using react router and react contect api. The data is hosted on contentful and fetched using contentful api. Please visit the website deployed on netlify : https://bookyourholiday.netlify.app
 
+Planned future commits to setup payment gateway and booking page.
+
 ### `npm start`
 
 Runs the app in the development mode.<br />
