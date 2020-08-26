@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import items from './data';
+import items from './data';
 import Client from './Contentful';
 
 
@@ -25,12 +25,11 @@ export default class RoomProvider extends Component {
 
     // getData
     getData = async () => {
-        try{
-            let response = await Client.getEntries({
-                content_type: "hotelData",
-                order: "sys.createdAt"
-            });
-            let rooms = this.formatData(response.items);
+        // try{
+        //     let response = await Client.getEntries({
+        //         content_type: "hotelData"
+        //     });
+            let rooms = this.formatData(items);
         //console.log(rooms);
         let featuredRooms = rooms.filter(room => room.featured === true);
         let maxPrice = Math.max(...rooms.map(item =>item.price));
@@ -45,9 +44,9 @@ export default class RoomProvider extends Component {
             maxSize
 
         });
-        } catch (error){
-            console.log(error);
-        }
+        // } catch (error){
+        //     console.log(error);
+        // }
     }
 
     componentDidMount(){
